@@ -1,0 +1,163 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, rgba(255, 221, 87, 0.95), rgba(255, 187, 51, 0.95)), url('images.jpg');
+  background-size: cover, contain;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 12px;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  margin: 8px 0 12px;
+}
+
+.nav-bar {
+  background-color: #ffbb33;
+  color: white;
+  text-align: center;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 13px;
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Form styling */
+form {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  max-width: 740px;
+  width: 90%;
+  font-size: 14px;
+}
+
+/* Grid layout for inputs */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+  margin-bottom: 18px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item input,
+.form-item select {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-item label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.form-item small {
+  font-size: 11px;
+  margin-top: 2px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    padding: 18px;
+  }
+
+  .nav-bar {
+    font-size: 12px;
+  }
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  border-color: #ffbb33;
+  outline: none;
+  box-shadow: 0 0 4px rgba(255, 187, 51, 0.5);
+}
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+small {
+  font-size: 11px;
+  color: #555;
+  margin-top: 3px;
+  display: block;
+}
+
+/* Button */
+button {
+  background-color: #ffbb33;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ffdd57;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(255, 187, 51, 0.5);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

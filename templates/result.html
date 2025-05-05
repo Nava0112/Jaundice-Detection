@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaundice Assessment Result</title>
+  <link rel="stylesheet" href="static/result.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="https://cdn-icons-png.flaticon.com/512/3209/3209446.png" alt="Medical Logo" class="logo" />
+    <h1>Jaundice Assessment Report</h1>
+    <p class="subheading">Generated on: <span id="date"></span></p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Patient Summary</h2>
+      <div class="info-grid">
+        <div><strong>Age:</strong> {{ data.age }}</div>
+        <div><strong>Gender:</strong> {{ data.gender }}</div>
+        <div><strong>Total Bilirubin:</strong> {{ data.total_bilirubin }} mg/dL</div>
+        <div><strong>Direct Bilirubin:</strong> {{ data.direct_bilirubin }} mg/dL</div>
+        <div><strong>AST:</strong> {{ data.ast }} U/L</div>
+        <div><strong>ALT:</strong> {{ data.alt }} U/L</div>
+        <div><strong>Hemoglobin:</strong> {{ data.hemoglobin }} g/dL</div>
+        <div><strong>Alkaline Phosphatase:</strong> {{ data.alk_phos }} U/L</div>
+        <div><strong>Stool Color:</strong> {{ data.stool_color }}</div>
+        <div><strong>Fatigue:</strong> {{ data.fatigue }}</div>
+        <div><strong>Itching:</strong> {{ data.itching }}</div>
+        <div><strong>Urine Color:</strong> {{ data.urine_color }}</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Uploaded Eye Image</h2>
+      <div class="image-preview">
+        {% if data.image_filename %}
+        <img id="eyeImage" src="{{ url_for('static', filename='uploads/' + data.image_filename) }}" alt="Uploaded Eye Image" />
+        {% else %}
+        <p>No image uploaded.</p>
+        {% endif %}
+      </div>
+      <p class="note">This image was analyzed for scleral discoloration using our AI model.</p>
+    </section>
+
+    <section class="card result-card">
+      <h2>Jaundice Risk Result</h2>
+    
+      {% if data.result_message.startswith("🔴") %}
+        <div class="result-box red">
+          <p class="result-title">🟥 High Risk of Jaundice</p>
+          <p class="result-advice">Your medical reports and eye scan both indicate signs of jaundice. It is strongly recommended that you consult a healthcare professional immediately for further diagnosis and treatment.</p>
+        </div>
+      {% elif data.result_message.startswith("🟢") %}
+        <div class="result-box green">
+          <p class="result-title">🟩 No Jaundice Detected – You're in Good Health!</p>
+          <p class="result-advice">Both your medical records and eye scan show no signs of jaundice. Keep maintaining a healthy lifestyle and regular checkups!</p>
+        </div>
+      {% elif data.result_message.startswith("🟠") %}
+        <div class="result-box orange">
+          <p class="result-title">🟧 Caution: Liver Indicators Detected</p>
+          <p class="result-advice">Your medical reports suggest signs of liver stress or potential jaundice, although your eye scan appears normal. A medical consultation is advisable for a detailed evaluation.</p>
+        </div>
+      {% elif data.result_message.startswith("🟡") %}
+        <div class="result-box yellow">
+          <p class="result-title">🟨 Mild Concern: Yellowing of Eyes Detected</p>
+          <p class="result-advice">While your medical reports are clear, your eye scan indicates a yellow tint, which might be caused by other conditions (e.g., fatigue, dehydration). Monitoring and medical advice are recommended.</p>
+        </div>
+      {% else %}
+        <p>{{ data.result_message }}</p>
+      {% endif %}
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Jaundice AI Assessment | Designed for medical professionals</p>
+  </footer>
+
+  <script>
+    document.getElementById('date').innerText = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>

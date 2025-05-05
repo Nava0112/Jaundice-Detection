@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #fffbe6, #fef3c7);
+    color: #333;
+    min-height: 100vh;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    background-color: #fff;
+    border-bottom: 2px solid #facc15;
+  }
+  
+  .logo {
+    width: 60px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    color: #0f172a;
+  }
+  
+  .subheading {
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+  }
+  
+  .card h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  
+  .image-preview img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: 3px solid #facc15;
+  }
+  
+  .note {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #475569;
+  }
+  
+  .result-card {
+    text-align: center;
+    border-left: 6px solid #eab308;
+  }
+  
+  .result-status {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .result-status.high-risk {
+    color: #dc2626;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    background-color: #fefce8;
+    color: #94a3b8;
+    border-top: 1px solid #facc15;
+  }
+
+  .result-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .result-advice {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .result-box.red {
+    background-color: #ffe5e5;
+    border-left: 6px solid #ff4d4d;
+  }
+  
+  .result-box.green {
+    background-color: #e5f7e5;
+    border-left: 6px solid #4CAF50;
+  }
+  
+  .result-box.orange {
+    background-color: #fff1e0;
+    border-left: 6px solid #ffa500;
+  }
+  
+  .result-box.yellow {
+    background-color: #fffde5;
+    border-left: 6px solid #ffd700;
+  }
+  
+  
