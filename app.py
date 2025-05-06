@@ -16,8 +16,14 @@ UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+# ▶️ Route to load info.html first
 @app.route('/')
 def home():
+    return render_template('info.html')
+
+# ▶️ Route for the actual tool page (previously default)
+@app.route('/index')
+def index():
     return render_template('index.html')
 
 @app.route('/submit', methods=['POST'])
@@ -73,7 +79,7 @@ def handle_submission():
     model_result = predict_jaundice_ml(features)
     form_data["risk"] = "High" if model_result == "Jaundice Detected" or eye_risk else "Low"
 
-    # --- Custom logic for result message ---
+    # Custom result message
     model_flag = "Jaundice" if model_result == "Jaundice Detected" else "No"
     eye_flag = "Jaundice" if eye_risk else "No"
 
