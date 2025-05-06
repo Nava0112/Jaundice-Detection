@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jaundice Detection AI</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #e3f2fd;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    header {
+      background: #ffcc00;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    section {
+      padding: 25px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #222;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #555;
+      background: #f1f1f1;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    a {
+      color: #007aff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    img {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 100%;
+    }
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .column {
+      flex: 1 1 400px;
+    }
+    .center-img {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+    .results-section {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .results-section img {
+      max-width: 450px;
+      margin-left: 20px;
+    }
+    .technologies {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .tech-box-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    .tech-box {
+      background-color: #fff;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .tech-box h3 {
+      margin: 0;
+      color: #222;
+    }
+    .technologies h2 {
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AI-Powered Jaundice Detection</h1>
+  <p>Using Computer Vision and Deep Learning to Detect Jaundice from Eye Images</p>
+</header>
+
+<section class="two-column">
+  <!-- About the Project - Left -->
+  <div class="column">
+    <h2>About the Project</h2>
+    <p>
+      This AI-powered jaundice detection tool is designed to help users screen for potential signs of jaundice using advanced image processing and machine learning. By analyzing the sclera (white part of the eyes) for discoloration patterns, the system provides an efficient and accessible health pre-screening solution.
+      <br><br>
+      The goal is to reduce barriers to early diagnosis by enabling users to upload an eye photo or enter medical data, which the system then evaluates. The tool is particularly useful in remote or underserved areas, or as a first-step health checker before visiting a healthcare provider. It supports both visual and numerical input for more comprehensive results.
+    </p>
+  </div>
+
+  <!-- Image - Right -->
+  <div class="column center-img">
+    <img src="static/jaundice.jpg" alt="Jaundice Illustration">
+  </div>
+</section>
+
+<section class="two-column">
+  <!-- Screenshot - Left -->
+  <div class="column">
+    <img src="static/screenshot_input.png" alt="Medical Report Input Screenshot">
+  </div>
+
+  <!-- How It Works - Right -->
+  <div class="column">
+    <h2>How It Works</h2>
+    <p>
+      The user starts by uploading an image of the eyes or by entering data from medical test reports. The system preprocesses the image and extracts color and texture features, especially focusing on yellowish discoloration in the sclera.
+      <br><br>
+      In parallel, any numerical input (like bilirubin levels) is also analyzed. The combined inputs are passed to a trained deep learning model, which evaluates the likelihood of jaundice being present. The result is then displayed clearly, along with confidence scores, enabling users to take timely medical action if needed.
+    </p>
+  </div>
+</section>
+
+<section class="technologies">
+  <h2>Technologies Used</h2>
+  <div class="tech-box-row">
+    <div class="tech-box">
+      <h3>Python</h3>
+    </div>
+    <div class="tech-box">
+      <h3>Flask</h3>
+    </div>
+    <div class="tech-box">
+      <h3>Deep Learning</h3>
+    </div>
+  </div>
+  <div class="tech-box-row">
+    <div class="tech-box">
+      <h3>Machine Learning</h3>
+    </div>
+    <div class="tech-box">
+      <h3>HTML/CSS</h3>
+    </div>
+  </div>
+</section>
+
+<section class="results-section">
+  <!-- Results Text - Left -->
+  <div style="flex: 1;">
+    <h2>Results</h2>
+    <p>
+      The system demonstrates impressive accuracy in predicting jaundice based on the provided eye image or medical data. With over 90% accuracy achieved on a custom dataset, this tool is a reliable assistant for early detection.
+      <br><br>
+      After processing the eye image or medical report, the system outputs the likelihood of jaundice, helping users determine the need for further medical consultation. The result is displayed with a confidence score to show how certain the model is in its prediction, providing clear guidance for next steps.
+      <br><br>
+      Below is a sample result of the jaundice detection, showcasing how the system visually represents the outcome for the user.
+    </p>
+  </div>
+
+  <!-- Result Screenshot - Right -->
+  <div style="flex: 1;">
+    <img src="static/screenshot_result.png" alt="Detection Result Screenshot">
+  </div>
+</section>
+
+<!-- Try It Now Section -->
+<section class="two-column" style="margin-top: 20px;">
+  <div class="column" style="text-align: center; width: 100%;">
+    <h2>Try It Now</h2>
+    <p>Click the button below to access the Jaundice Detection Tool and test it yourself using an eye image or medical data.</p>
+    <a href="{{ url_for('index') }}">
+      <button style="padding: 12px 30px; background-color: #ffcc00; color: #222; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-top: 10px;">
+        Go to Detection Tool
+      </button>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>Made by Navarasan N S M | <a href="mailto:your@email.com">Contact</a></p>
+</footer>
+
+</body>
+</html>
